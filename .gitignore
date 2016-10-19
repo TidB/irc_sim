@@ -9,7 +9,6 @@ __pycache__/
 # Distribution / packaging
 .Python
 env/
-build/
 develop-eggs/
 dist/
 downloads/
@@ -138,3 +137,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 .idea/
+/logs/
+/user_cache/
+cache/
+/ttest.py
+cache/main.py

@@ -11,11 +11,11 @@ def do_step(func):
 
 
 class Channel:
-    def __init__(self, name, users=None, output=stdout,
-                 timestamp=datetime.datetime.now(), include_timestamp=True,
+    def __init__(self, name, output=stdout, timestamp=datetime.datetime.now(),
+                 include_timestamp=True,
                  timestep=datetime.timedelta(seconds=1)):
         self.name = name
-        self.users = [] if users is None else users
+        self.users = []
         self.output = output
         self.current_timestamp = timestamp
         self.include_timestamp = include_timestamp
@@ -23,6 +23,9 @@ class Channel:
 
     def __str__(self):
         return self.name
+
+    def wait(self, s):
+        self.step(datetime.timedelta(seconds=s))
 
     def step(self, step):
         self.current_timestamp += step
